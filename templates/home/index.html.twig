@@ -1,20 +1,48 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Faune et flore Marine{% endblock %}</title>
 
-{% block title %}Hello HomeController!{% endblock %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        {% block stylesheets %}
+        {% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container-fluid bg-info-subtle p-5 border border-primary">
+  <div class="row">
+    <h1 class="text-center p-5">Faune et flore marie</h1>
+  </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/opt/lampp/htdocs/MarineFloraAndFauna/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/opt/lampp/htdocs/MarineFloraAndFauna/templates/home/index.html.twig</code></li>
-    </ul>
+  </div class=row>
+    <div class="card text-center align-middle m-5">
+      <div class="card-header">
+        <h2>Accueil</h2>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Description du site</h5>
+        <p class="card-text">Depuis des années, je plonge et j'observe le monde aquatique. Le plus extraordinaire, pour moi, c'est cette posibilité de ce déplacer dans les trois dimensions</p>
+        <p class="card-text">Il est dédié à la proctection et à la connaissance de la biotope marine.</p>
+        <p class="card-text">A l'interaction de l'homme sur la nature.</p>
+        <a href="/animal" class="btn btn-primary">Entrez</a>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <p>Le 25/01/2025.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center p-3 position-absolute bottom-0 bg-info-subtle border border-primary">
+    <div class=row>
+      <p>footer</p>
+    </div>
+  </div>
 </div>
+
+
+
 {% endblock %}

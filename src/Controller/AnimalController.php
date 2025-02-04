@@ -12,7 +12,7 @@ final class AnimalController extends AbstractController
     #[Route('/animal', name: 'animal.index')]
     public function index(Request $request): Response
     {
-        return new Response('Animaux');
+      return $this->render('animal/index.html.twig');
     }
 
     #[Route('/animal/{slug}-{id}', name: 'animal.show', requirements: ['id' => '\d+', 'slug' => '[a-z0-9-]+'])]
